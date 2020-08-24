@@ -18,12 +18,17 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/customers/customer.module').then((e) => e.CustomerModule),
   },
-  // {
-  //   path: 'customers',
-  //   loadChildren: () =>
-  //     import('./features/customers/customer.module').then((e) => e.CustomerModule),
-  // },
+   {
+     path: 'invoice',
+     loadChildren: () =>
+       import('./features/invoices/invoice.module').then((e) => e.InvoiceModule),
+   },
 
+{
+     path: 'product',
+     loadChildren: () =>
+       import('./features/products/product.module').then((e) => e.ProductModule),
+   },
 
 ];
 

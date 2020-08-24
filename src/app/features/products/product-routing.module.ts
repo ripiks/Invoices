@@ -6,16 +6,16 @@ import * as fromPages from './containers';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'list',
+    redirectTo: 'product',
     pathMatch: 'full',
   },
   {
     path: 'list',
-    component: fromPages.CustomerComponent,
+    component: fromPages.ProductsComponent,
   },
   {
-    path: 'detail/:id',
-    component: fromPages.CustomerDetailComponent,
+    path: 'detail',
+    component: fromPages.ProductDetailComponent,
   },
 ];
 
@@ -27,4 +27,4 @@ export const routes: Routes = [
   exports: [RouterModule]
 
 })
-export class CustomerRoutingModule {}
+export class ProductRoutingModule {}

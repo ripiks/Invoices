@@ -11,11 +11,11 @@ export const routes: Routes = [
   },
   {
     path: 'list',
-    component: fromPages.CustomerComponent,
+    component: fromPages.InvoicesComponent,
   },
   {
-    path: 'detail/:id',
-    component: fromPages.CustomerDetailComponent,
+    path: 'detail',
+    component: fromPages.InvoiceDetailComponent,
   },
 ];
 
@@ -27,4 +27,4 @@ export const routes: Routes = [
   exports: [RouterModule]
 
 })
-export class CustomerRoutingModule {}
+export class InvoiceRoutingModule {}
