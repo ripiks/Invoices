@@ -4,8 +4,6 @@ import { CustomerRountingModule } from './customer-routing.module';
 import { CONTAINERS } from './containers';
 import { COMPONENTS } from './components';
 
-
-
 @NgModule({
   declarations: [
     CONTAINERS,
