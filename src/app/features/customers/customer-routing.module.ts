@@ -5,8 +5,18 @@ import * as fromPages from './containers';
 
 export const routes: Routes = [
   {
+    
     path: '',
+    redirectTo: 'list',
+    pathMatch: 'full',
+  },
+  {
+    path: 'list',
     component: fromPages.CustomerComponent,
+  },
+  {
+    path: 'detail/:id',
+    component: fromPages.CustomerDetailComponent,
   },
 ];
 
