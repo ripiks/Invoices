@@ -1,12 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CustomerRountingModule } from './customer-routing.module';
+import { CONTAINERS } from './containers';
+import { COMPONENTS } from './components';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    CONTAINERS,
+    COMPONENTS
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    CustomerRountingModule
   ]
 })
 export class CustomerModule { }
