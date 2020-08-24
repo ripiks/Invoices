@@ -6,7 +6,7 @@ import * as fromPages from './containers';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'product',
+    redirectTo: 'list',
     pathMatch: 'full',
   },
   {

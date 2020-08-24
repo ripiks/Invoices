@@ -1,12 +1,12 @@
-import { CustomerComponent } from './customer/customer.component';
+import { CustomersComponent } from './customers/customers.component';
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 
 
-export { CustomerComponent } from './customer/customer.component';
+export { CustomersComponent } from './customers/customers.component';
 export { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 
 
 export const CONTAINERS = [
-  CustomerComponent,
+  CustomersComponent,
   CustomerDetailComponent
 ];
