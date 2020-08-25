@@ -1,6 +1,8 @@
 export interface Customer{
     name: string;   // jmeno
-    lastname: string; // prijmeni
+   // lastname: string; // prijmeni
     address: string; // adresa
-    phone: number; // tel.cislo
+    phone?: number; // tel.cislo
+    ico: number;
+    dic: string;
 }

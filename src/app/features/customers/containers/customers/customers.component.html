@@ -1,1 +1,4 @@
 <p>customers works!</p>
+<div *ngFor='let customer of customers'>
+    <app-customer-row [customer]='customer'></app-customer-row>
+</div>
