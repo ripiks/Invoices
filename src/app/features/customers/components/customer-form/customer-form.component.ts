@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Customer } from 'src/app/features/models';
+import { Customer } from 'src/app/features';
 
 @Component({
   selector: 'app-customer-form',

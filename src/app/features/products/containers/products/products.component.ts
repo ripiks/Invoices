@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/features/models';
+import { Product } from 'src/app/features';
 
 @Component({
   selector: 'app-products',
@@ -7,15 +7,11 @@ import { Product } from 'src/app/features/models';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
-  product: Product[];
+  products: Product[];
 
   constructor() {}
 
   ngOnInit() {
-    this.product = [
-      { name: 'produkt1', price: '10', category: 'nářadí' },
-      { name: 'produkt2', price: '15', category: 'služby' },
-      { name: 'produkt3', price: '20', category: 'doplňky' },
-    ];
+   
   }
 }

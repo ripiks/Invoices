@@ -1,9 +1,17 @@
 
+<div>
 {{invoice.invoiceNumber}}
-{{invoice.customer}}
+<app-customer-row [customer]='invoice.customer'></app-customer-row>
 {{invoice.createdAt}}
-{{invoice.products}}
+
 {{invoice.createdAt}}
 {{invoice.paydate}}
 {{invoice.status}}
 {{invoice.totalPrice}}
+
+<div *ngFor='let product of invoice.products'>
+    <app-product-row [product]='product'></app-product-row>
+</div>
+
+
+</div>

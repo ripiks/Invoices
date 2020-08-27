@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Invoice } from 'src/app/features/models';
+import { Invoice } from 'src/app/features';
 
 @Component({
   selector: 'app-invoice-form',

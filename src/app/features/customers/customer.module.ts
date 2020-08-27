@@ -12,6 +12,9 @@ import { COMPONENTS } from './components';
   imports: [
     CommonModule,
     CustomerRoutingModule
+  ],
+  exports: [
+    ...COMPONENTS
   ]
 })
 export class CustomerModule { }

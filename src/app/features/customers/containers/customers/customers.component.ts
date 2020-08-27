@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Customer } from 'src/app/features/models';
+import { DataService } from 'src/app/features/shared/services/data.service';
+import { Customer } from 'src/app/features/shared/models/customers';
 
 @Component({
   selector: 'app-customers',
@@ -9,13 +10,9 @@ import { Customer } from 'src/app/features/models';
 export class CustomersComponent implements OnInit {
   customers: Customer[];
 
-  constructor() {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.customers = [
-      { name: 'ralba', address: 'srgsg', ico: 165, dic: 'cz1234' },
-      { name: 'ralba1', address: 'srdgg', ico: 168, dic: 'cz1786' },
-      { name: 'ralba2', address: 'srweg', ico: 167, dic: 'cz1454' },
-    ];
+    this.customers = this.dataService.getCustomers();
   }
 }

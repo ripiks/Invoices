@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Invoice } from 'src/app/features/models';
+import { Invoice } from 'src/app/features';
 
 @Component({
   selector: 'app-invoice-row',
@@ -10,5 +10,7 @@ export class InvoiceRowComponent implements OnInit {
   @Input() invoice: Invoice;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 }
