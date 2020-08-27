@@ -10,9 +10,9 @@ export class DataService {
 
   constructor() {
     this.customers = [
-      { name: 'ralba', address: 'srgsg', ico: 165, dic: 'cz1234' },
-      { name: 'ralba1', address: 'srdgg', ico: 168, dic: 'cz1786' },
-      { name: 'ralba2', address: 'srweg', ico: 167, dic: 'cz1454' },
+      { id: 1,name: 'ralba', address: 'srgsg', ico: 165, dic: 'cz1234' },
+      { id: 2,name: 'ralba1', address: 'srdgg', ico: 168, dic: 'cz1786' },
+      { id: 3,name: 'ralba2', address: 'srweg', ico: 167, dic: 'cz1454' },
     ];
 
     this.products = [
@@ -51,5 +51,9 @@ export class DataService {
   }
   public getProducts() {
     return this.products;
+  }
+
+  public getCustomer(id: number): Customer {
+    return this.customers.find(p => p.id == id);
   }
 }
