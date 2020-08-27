@@ -1,13 +1,15 @@
 <mat-drawer-container class="example-container">
-  <mat-drawer mode="side" opened
-    ><ul>
-      <li><a [routerLink]="['/customers']">customers</a></li>
-      <li><a [routerLink]="['/invoice']">invoice</a></li>
-      <li><a [routerLink]="['/product']">product</a></li>
-      </ul
-  ></mat-drawer>
-  <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
+    <mat-drawer mode="side" opened>
+        <ul>
+            <li><a [routerLink]="['/customers']">customers</a></li>
+            <li><a [routerLink]="['/invoice']">invoice</a></li>
+            <li><a [routerLink]="['/product']">product</a></li>
+        </ul>
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
 </mat-drawer-container>
-<mat-card><li><a [routerLink]="['/customers']">customers</a></li></mat-card>
+<!-- <mat-card><li><a [routerLink]="['/customers']">customers</a></li></mat-card>
 <mat-card><li><a [routerLink]="['/invoice']">invoice</a></li></mat-card>
-<mat-card><li><a [routerLink]="['/product']">product</a></li></mat-card>
+<mat-card><li><a [routerLink]="['/product']">product</a></li></mat-card> -->

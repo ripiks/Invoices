@@ -1,4 +1,4 @@
-import { Customer } from '../Models/Customers';
+import { Customer } from '../models/Customers';
 import { Product } from './product';
 //import { Purchase } from './product';
 
