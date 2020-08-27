@@ -1,1 +1,3 @@
-<p>invoices works!</p>
+<div *ngFor='let invoice of invoice'>
+    <app-invoice-row [invoice]='invoice'></app-invoice-row>
+</div>

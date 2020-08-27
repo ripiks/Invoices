@@ -6,8 +6,8 @@ import { COMPONENTS } from './components';
 
 @NgModule({
   declarations: [
-    CONTAINERS,
-    COMPONENTS
+    ...CONTAINERS,
+    ...COMPONENTS
   ],
   imports: [
     CommonModule,

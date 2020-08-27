@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Invoice, Product, Customer } from 'src/app/features/models';
 
 @Component({
   selector: 'app-invoices',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./invoices.component.css']
 })
 export class InvoicesComponent implements OnInit {
-
+  invoice: Invoice[];
+  product: Product[];
+  customer: Customer;
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.invoice =
+     [{invoiceNumber: 111 , createdAt: 'vytvoreno:'  , customer: this.customer, totalPrice: 1000,
+      status: 'odeslano', paydate: 'placeno', products: this.product }];
   }
 
 }

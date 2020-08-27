@@ -4,15 +4,12 @@ import { Customer } from 'src/app/features/models';
 @Component({
   selector: 'app-customer-form',
   templateUrl: './customer-form.component.html',
-  styleUrls: ['./customer-form.component.css']
+  styleUrls: ['./customer-form.component.css'],
 })
 export class CustomerFormComponent implements OnInit {
+  @Input() customer: Customer;
 
-@Input()customer: Customer;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
