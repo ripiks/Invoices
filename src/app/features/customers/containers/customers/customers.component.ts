@@ -13,6 +13,7 @@ export class CustomersComponent implements OnInit {
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
+    console.log("ngOnInit");
     this.customers = this.dataService.getCustomers();
   }
 }

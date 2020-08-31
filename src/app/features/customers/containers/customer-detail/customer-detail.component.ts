@@ -21,4 +21,9 @@ export class CustomerDetailComponent implements OnInit {
       parseInt(this.route.snapshot.paramMap.get('id'))
     );
   }
+
+  onSubmit(customer: Customer) {
+    console.log(customer)
+    this.dataService.updateCustomer(customer);
+  }
 }

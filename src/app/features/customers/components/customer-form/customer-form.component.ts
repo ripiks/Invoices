@@ -1,5 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Customer } from 'src/app/features';
+import {
+  FormGroup,
+  FormControl,
+  RequiredValidator,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-customer-form',
@@ -9,7 +15,26 @@ import { Customer } from 'src/app/features';
 export class CustomerFormComponent implements OnInit {
   @Input() customer: Customer;
 
+  @Output() submited: EventEmitter<Customer> = new EventEmitter();
+
+  customerForm = new FormGroup({
+    //id: number;
+    id: new FormControl(''),
+    name: new FormControl('',[Validators.required]),
+    address: new FormControl('',[Validators.required]),
+    phone: new FormControl('',[Validators.required]),
+    ico: new FormControl('',[Validators.required]),
+    dic: new FormControl('',[Validators.required]),
+  });
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('asdf');
+    this.customerForm.patchValue(this.customer);
+  }
+
+  onSubmit() {
+    this.submited.emit(this.customerForm.value);
+  }
 }

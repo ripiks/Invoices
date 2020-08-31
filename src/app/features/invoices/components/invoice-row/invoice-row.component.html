@@ -2,10 +2,10 @@
 <div>
 {{invoice.invoiceNumber}}
 <app-customer-row [customer]='invoice.customer'></app-customer-row>
-{{invoice.createdAt}}
 
-{{invoice.createdAt}}
-{{invoice.paydate}}
+{{invoice.createdAt  | date}}
+{{invoice.paydate | date}}
+
 {{invoice.status}}
 {{invoice.totalPrice}}
 

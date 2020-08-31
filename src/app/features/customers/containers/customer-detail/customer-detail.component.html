@@ -1,13 +1,2 @@
 <h2>h2</h2>
-<p>customer-detail works!</p>
-
-
-
-<!-- <app-customer-form [customer]=""></app-customer-form> -->
-{{
-    customer | json
-}}
-
-
-customer form na input poslat customer
-
+<app-customer-form [customer]="customer" (submited)="onSubmit($event)"></app-customer-form>
