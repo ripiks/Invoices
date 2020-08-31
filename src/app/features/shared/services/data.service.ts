@@ -10,15 +10,15 @@ export class DataService {
 
   constructor() {
     this.customers = [
-      { id: 1,name: 'ralba', address: 'srgsg', ico: 165, dic: 'cz1234' },
-      { id: 2,name: 'ralba1', address: 'srdgg', ico: 168, dic: 'cz1786' },
-      { id: 3,name: 'ralba2', address: 'srweg', ico: 167, dic: 'cz1454' },
+      { id: 1, name: 'ralba', address: 'srgsg', ico: 165, dic: 'cz1234' },
+      { id: 2, name: 'ralba1', address: 'srdgg', ico: 168, dic: 'cz1786' },
+      { id: 3, name: 'ralba2', address: 'srweg', ico: 167, dic: 'cz1454' },
     ];
 
     this.products = [
-      { name: 'produkt1', price: '10', category: 'nářadí' },
-      { name: 'produkt2', price: '15', category: 'služby' },
-      { name: 'produkt3', price: '20', category: 'doplňky' },
+      {id: 1, name: 'produkt1', price: '10', category: 'nářadí' },
+      {id: 2, name: 'produkt2', price: '15', category: 'služby' },
+      {id: 3, name: 'produkt3', price: '20', category: 'doplňky' },
     ];
 
     this.invoices = [
@@ -29,7 +29,7 @@ export class DataService {
         totalPrice: 1000,
         status: 'odeslano',
         paydate: 'placeno',
-        products: [this.products[0],this.products[2]],
+        products: [this.products[0], this.products[2]],
       },
       {
         invoiceNumber: 112,
@@ -54,6 +54,10 @@ export class DataService {
   }
 
   public getCustomer(id: number): Customer {
-    return this.customers.find(p => p.id == id);
+    return this.customers.find(p => p.id === id);
+  }
+
+  public getProduct(id: number): Product{
+    return this.products.find(p => p.id === id);
   }
 }
