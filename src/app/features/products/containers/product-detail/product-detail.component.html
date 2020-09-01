@@ -1,7 +1,6 @@
 <p>detail produktu works!</p>
 
-<app-product-form [product]=""></app-product-form>
-
-{{
-    product | json
-}}
+<app-product-form
+  [product]="product"
+  (submited)="onSubmit($event)"
+></app-product-form>

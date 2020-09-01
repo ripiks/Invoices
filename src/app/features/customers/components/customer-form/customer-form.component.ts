@@ -18,13 +18,19 @@ export class CustomerFormComponent implements OnInit {
   @Output() submited: EventEmitter<Customer> = new EventEmitter();
 
   customerForm = new FormGroup({
-    //id: number;
     id: new FormControl(''),
-    name: new FormControl('',[Validators.required]),
-    address: new FormControl('',[Validators.required]),
-    phone: new FormControl('',[Validators.required]),
-    ico: new FormControl('',[Validators.required]),
-    dic: new FormControl('',[Validators.required]),
+    name: new FormControl('', [Validators.required]),
+    address: new FormControl('', [Validators.required]),
+    phone: new FormControl('', [
+      Validators.required,
+      Validators.min(9),
+      Validators.pattern('^[0-9]*$'),
+    ]),
+    ico: new FormControl('', [
+      Validators.required,
+      Validators.pattern('^[0-9]*$'),
+    ]),
+    dic: new FormControl('', [Validators.required]),
   });
 
   constructor() {}

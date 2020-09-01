@@ -21,4 +21,8 @@ export class ProductDetailComponent implements OnInit {
       parseInt(this.route.snapshot.paramMap.get('id'))
     );
   }
+
+  onSubmit(product: Product) {
+    this.dataService.updateProduct(product);
+  }
 }

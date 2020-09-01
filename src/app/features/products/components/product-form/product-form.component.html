@@ -1,2 +1,21 @@
-<p>product-form works!</p>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      Name
+      <input type="text" formControlName="name" />
+    </label>
+  </div>
+  <div>
+    <label>
+      price
+      <input type="text" formControlName="price" />
+    </label>
+  </div>
 
+  <label>
+    category
+    <input type="text" formControlName="category" />
+  </label>
+
+  <button [disabled]="this.productForm.invalid">submit</button>
+</form>

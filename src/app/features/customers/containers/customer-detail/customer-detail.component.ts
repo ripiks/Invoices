@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/features/shared';
 import { DataService } from 'src/app/features/shared/services/data.service';
-import {  ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-customer-detail',
@@ -14,7 +14,7 @@ export class CustomerDetailComponent implements OnInit {
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute
-  ){}
+  ) {}
 
   ngOnInit(): void {
     this.customer = this.dataService.getCustomer(
@@ -23,7 +23,7 @@ export class CustomerDetailComponent implements OnInit {
   }
 
   onSubmit(customer: Customer) {
-    console.log(customer)
+    console.log(customer);
     this.dataService.updateCustomer(customer);
   }
 }

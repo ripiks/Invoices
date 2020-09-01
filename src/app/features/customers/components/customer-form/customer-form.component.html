@@ -1,48 +1,33 @@
-<p>customer-form works!</p>
-
-
-
 <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
-
-    <div>
-        <label>
-            First Name:
-            <input type="text" formControlName="name">
-        </label>
-    </div>
-    <div>
-
-
-
-        <label>
-            address
-            <input type="text" formControlName="address">
-        </label>
-
-    </div>
-
+  <div>
     <label>
-        phone
-        <input type="text" formControlName="phone">
+      First Name:
+      <input type="text" formControlName="name" />
     </label>
-
-
-
+  </div>
+  <div>
     <label>
-        ico
-        <input type="text" formControlName="ico">
+      address
+      <input type="text" formControlName="address" />
     </label>
-
-
-
+  </div>
+  <div>
     <label>
-        dic
-        <input type="text" formControlName="dic">
+      phone
+      <input type="text" formControlName="phone" />
     </label>
-
-
-    <button [disabled]="this.customerForm.invalid">
-        submit
-    </button>
-
+  </div>
+  <div>
+    <label>
+      ico
+      <input type="text" formControlName="ico" />
+    </label>
+  </div>
+  <div>
+    <label>
+      dic
+      <input type="text" formControlName="dic" />
+    </label>
+  </div>
+  <button [disabled]="this.customerForm.invalid">submit</button>
 </form>

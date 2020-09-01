@@ -10,9 +10,9 @@ export class DataService {
 
   constructor() {
     this.customers = [
-      { id: 1, name: 'ralba', address: 'srgsg', ico: 165, dic: 'cz1234' },
-      { id: 2, name: 'ralba1', address: 'srdgg', ico: 168, dic: 'cz1786' },
-      { id: 3, name: 'ralba2', address: 'srweg', ico: 167, dic: 'cz1454' },
+      { id: 1, name: 'ralba', address: 'praha', ico: 165, dic: 'cz1234' },
+      { id: 2, name: 'ralba1', address: 'brno', ico: 168, dic: 'cz1786' },
+      { id: 3, name: 'ralba2', address: 'usti nl', ico: 167, dic: 'cz1454' },
     ];
 
     this.products = [
@@ -61,6 +61,10 @@ export class DataService {
     return this.products.find((p) => p.id === id);
   }
 
+  public getInvoice(invoiceNumber: number): Invoice {
+    return this.invoices.find((p) => p.invoiceNumber === invoiceNumber);
+  }
+
   public updateCustomer(customer: Customer) {
     let flag = true;
     for (let i = 0; i < this.customers.length; i++) {
@@ -70,7 +74,33 @@ export class DataService {
       }
     }
     if (flag) {
-      //create new
+      // create new
+    }
+  }
+
+  public updateProduct(product: Product) {
+    let flag = true;
+    for (let i = 0; i < this.products.length; i++) {
+      if (this.products[i].id === product.id) {
+        flag = false;
+        this.products[i] = product;
+      }
+    }
+    if (flag) {
+      // vytvorit novy ?
+    }
+  }
+
+  public updateInvoice(invoice: Invoice) {
+    let flag = true;
+    for (let i = 0; i < this.invoices.length; i++) {
+      if (this.invoices[i].invoiceNumber === invoice.invoiceNumber) {
+        flag = false;
+        this.invoices[i] = invoice;
+      }
+    }
+    if (flag) {
+      // vytvor novou
     }
   }
 }
