@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/features/shared';
 import { DataService } from 'src/app/features/shared/services/data.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-detail',
@@ -10,20 +10,41 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CustomerDetailComponent implements OnInit {
   customer: Customer;
+  editingMode: boolean = false;
 
   constructor(
     private dataService: DataService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router,
+
   ) {}
 
   ngOnInit(): void {
-    this.customer = this.dataService.getCustomer(
-      parseInt(this.route.snapshot.paramMap.get('id'))
-    );
+    let idForEdit = this.route.snapshot.paramMap.get('id');
+
+    if (idForEdit) {
+      this.customer = this.dataService.getCustomer(parseInt(idForEdit));
+      this.editingMode = true;
+    } else {
+      this.customer = {
+        id: this.dataService.getNextId(),
+        name: null,
+        address: null,
+        phone: null,
+        ico: null,
+        dic: null,
+      };
+      this.editingMode = false;
+    }
   }
 
   onSubmit(customer: Customer) {
-    console.log(customer);
     this.dataService.updateCustomer(customer);
+    if(this.editingMode == true){
+      this.router.navigate(['/customers', 'list'])
+    }
+    else{
+      this.router.navigate(['/customers', 'detail', customer.id])
+    }
   }
 }

@@ -23,12 +23,14 @@ export class CustomerFormComponent implements OnInit {
     address: new FormControl('', [Validators.required]),
     phone: new FormControl('', [
       Validators.required,
-      Validators.min(9),
-      Validators.pattern('^[0-9]*$'),
+      //Validators.min(9),
+      Validators.pattern('^\\+[0-9]*$'),
+      Validators.minLength(13),
     ]),
     ico: new FormControl('', [
       Validators.required,
       Validators.pattern('^[0-9]*$'),
+      Validators.minLength(9),
     ]),
     dic: new FormControl('', [Validators.required]),
   });
@@ -36,7 +38,6 @@ export class CustomerFormComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log('asdf');
     this.customerForm.patchValue(this.customer);
   }
 

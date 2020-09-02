@@ -65,6 +65,15 @@ export class DataService {
     return this.invoices.find((p) => p.invoiceNumber === invoiceNumber);
   }
 
+  public getNextId(){
+    let max = 0;
+    for (let i = 0; i < this.customers.length; i++) {
+      if( max < this.customers[i].id)
+       max = this.customers[i].id;
+    }
+    return max + 1 ;
+  }
+
   public updateCustomer(customer: Customer) {
     let flag = true;
     for (let i = 0; i < this.customers.length; i++) {
@@ -75,6 +84,7 @@ export class DataService {
     }
     if (flag) {
       // create new
+      this.customers.push(customer)
     }
   }
 
