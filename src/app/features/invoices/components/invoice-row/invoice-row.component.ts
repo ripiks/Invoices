@@ -10,7 +10,5 @@ export class InvoiceRowComponent implements OnInit {
   @Input() invoice: Invoice;
   constructor() {}
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 }

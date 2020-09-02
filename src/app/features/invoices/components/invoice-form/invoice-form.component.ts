@@ -1,6 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Invoice } from 'src/app/features';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  RequiredValidator,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-invoice-form',
@@ -33,7 +38,7 @@ export class InvoiceFormComponent implements OnInit {
     this.invoiceForm.patchValue(this.invoice);
   }
 
-  onSubmit(){
+  onSubmit() {
     this.submited.emit(this.invoiceForm.value);
   }
 }

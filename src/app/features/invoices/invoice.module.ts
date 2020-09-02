@@ -5,6 +5,7 @@ import { CONTAINERS } from './containers';
 import { COMPONENTS } from './components';
 import { ProductModule } from '../products';
 import { CustomerModule } from '../customers';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,11 @@ import { CustomerModule } from '../customers';
     CommonModule,
     InvoiceRoutingModule,
     ProductModule,
-    CustomerModule
+    CustomerModule,
+    ReactiveFormsModule
+  ],
+  exports: [
+    ...COMPONENTS
   ]
 })
 export class InvoiceModule { }
