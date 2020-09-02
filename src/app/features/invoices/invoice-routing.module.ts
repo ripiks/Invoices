@@ -17,6 +17,10 @@ export const routes: Routes = [
     path: 'detail',
     component: fromPages.InvoiceDetailComponent,
   },
+  {
+    path: 'create',
+    component: fromPages.InvoiceDetailComponent,
+  },
 ];
 
 

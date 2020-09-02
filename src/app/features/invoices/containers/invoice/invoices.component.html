@@ -1,3 +1,6 @@
-<div *ngFor='let invoice of invoice'>
-    <app-invoice-row [invoice]='invoice'></app-invoice-row>
+<h2>invoices</h2>
+
+<button [routerLink]="['/invoices/create']">create new invoice</button>
+<div *ngFor="let invoice of invoice">
+  <app-invoice-row [invoice]="invoice"></app-invoice-row>
 </div>

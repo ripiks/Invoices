@@ -1,1 +1,46 @@
-<p>invoice-form works!</p>
+<form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
+  {{ invoice.invoiceNumber }}
+  <div>
+    <label>
+      Invoice Number:
+      <input type="text" formControlName="Invoice Number" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Created at
+      <input type="text" formControlName="Created at" />
+    </label>
+  </div>
+  <div>
+    <label>
+      paydate
+      <input type="text" formControlName="paydate" />
+    </label>
+  </div>
+  <div>
+    <label>
+      customer
+      <input type="text" formControlName="customer" />
+    </label>
+  </div>
+  <div>
+    <label>
+      totalPrice
+      <input type="text" formControlName="totalPrice" />
+    </label>
+  </div>
+  <div>
+    <label>
+      products
+      <input type="text" formControlName="products" />
+    </label>
+  </div>
+  <div>
+    <label>
+      total Price
+      <input type="text" formControlName="totalPrice" />
+    </label>
+  </div>
+  <button [disabled]="this.customerForm.invalid">submit</button>
+</form>

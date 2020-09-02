@@ -65,22 +65,29 @@ export class DataService {
     return this.invoices.find((p) => p.invoiceNumber === invoiceNumber);
   }
 
-  public getNextId(){
+  public getNextId() {
     let max = 0;
     for (let i = 0; i < this.customers.length; i++) {
-      if( max < this.customers[i].id)
-       max = this.customers[i].id;
+      if (max < this.customers[i].id) max = this.customers[i].id;
     }
-    return max + 1 ;
+    return max + 1;
   }
 
-  public NextId(){
+  public NextId() {
     let max = 0;
     for (let i = 0; i < this.products.length; i++) {
-      if( max < this.products[i].id)
-       max = this.products[i].id;
+      if (max < this.products[i].id) max = this.products[i].id;
     }
-    return max + 1 ;
+    return max + 1;
+  }
+
+  public getNextInvoiceNumber() {
+    let max = 0;
+    for (let i = 0; i < this.invoices.length; i++) {
+      if (max < this.invoices[i].invoiceNumber)
+        max = this.invoices[i].invoiceNumber;
+    }
+    return max + 1;
   }
 
   public updateCustomer(customer: Customer) {

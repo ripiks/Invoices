@@ -1,17 +1,23 @@
-
 <div>
-{{invoice.invoiceNumber}}
-<app-customer-row [customer]='invoice.customer'></app-customer-row>
+  {{ invoice.invoiceNumber }}
+  <app-customer-row [customer]="invoice.customer"></app-customer-row>
 
-{{invoice.createdAt  | date}}
-{{invoice.paydate | date}}
+  {{ invoice.invoiceNumber }}
+  {{ invoice.customer }}
+  {{ invoice.products }}
+  {{ invoice.createdAt | date }}
+  {{ invoice.paydate | date }}
+  {{ invoice.status }}
+  {{ invoice.totalPrice }}
 
-{{invoice.status}}
-{{invoice.totalPrice}}
+  <a
+    [routerLink]="['/invoices/detail', invoice.invoiceNumber]"
+    routerLinkActive="router-link-active"
+  >
+    edit
+  </a>
 
-<div *ngFor='let product of invoice.products'>
-    <app-product-row [product]='product'></app-product-row>
-</div>
-
-
+  <div *ngFor="let product of invoice.products">
+    <app-product-row [product]="product"></app-product-row>
+  </div>
 </div>
