@@ -1,5 +1,7 @@
-<p>products works!</p>
-<div *ngFor='let product of products'>
-    <app-product-row [product]='product'></app-product-row>
-</div>
+<h2>products </h2>
 
+<button [routerLink]="['/product/create']">create new product</button>
+
+<div *ngFor="let product of products">
+  <app-product-row [product]="product"></app-product-row>
+</div>

@@ -1,8 +1,6 @@
-<h2>customers</h2 >
+<h2>customers</h2>
 
-<button  [routerLink]="['/customers/create']">
-    create new customer
-</button>
-<div *ngFor='let customer of customers'>
-    <app-customer-row [customer]='customer'></app-customer-row>
+<button [routerLink]="['/customers/create']">create new customer</button>
+<div *ngFor="let customer of customers">
+  <app-customer-row [customer]="customer"></app-customer-row>
 </div>

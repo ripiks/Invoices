@@ -74,6 +74,15 @@ export class DataService {
     return max + 1 ;
   }
 
+  public NextId(){
+    let max = 0;
+    for (let i = 0; i < this.products.length; i++) {
+      if( max < this.products[i].id)
+       max = this.products[i].id;
+    }
+    return max + 1 ;
+  }
+
   public updateCustomer(customer: Customer) {
     let flag = true;
     for (let i = 0; i < this.customers.length; i++) {
@@ -84,7 +93,7 @@ export class DataService {
     }
     if (flag) {
       // create new
-      this.customers.push(customer)
+      this.customers.push(customer);
     }
   }
 
@@ -98,6 +107,7 @@ export class DataService {
     }
     if (flag) {
       // vytvorit novy ?
+      this.products.push(product);
     }
   }
 
@@ -111,6 +121,7 @@ export class DataService {
     }
     if (flag) {
       // vytvor novou
+      this.invoices.push(invoice);
     }
   }
 }

@@ -17,14 +17,15 @@ export const routes: Routes = [
     path: 'detail/:id',
     component: fromPages.ProductDetailComponent,
   },
+  {
+    path: 'create',
+    component: fromPages.ProductDetailComponent,
+  },
 ];
-
-
 
 @NgModule({
   declarations: [],
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-
+  exports: [RouterModule],
 })
 export class ProductRoutingModule {}

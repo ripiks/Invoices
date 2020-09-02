@@ -23,7 +23,6 @@ export class CustomerFormComponent implements OnInit {
     address: new FormControl('', [Validators.required]),
     phone: new FormControl('', [
       Validators.required,
-      //Validators.min(9),
       Validators.pattern('^\\+[0-9]*$'),
       Validators.minLength(13),
     ]),
@@ -32,7 +31,11 @@ export class CustomerFormComponent implements OnInit {
       Validators.pattern('^[0-9]*$'),
       Validators.minLength(9),
     ]),
-    dic: new FormControl('', [Validators.required]),
+    dic: new FormControl('', [
+      Validators.required,
+      Validators.pattern('^[A-Z0-9]*$'),
+      Validators.minLength(10),
+    ]),
   });
 
   constructor() {}

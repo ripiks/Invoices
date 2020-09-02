@@ -15,8 +15,7 @@ export class CustomerDetailComponent implements OnInit {
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute,
-    private router: Router,
-
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -40,11 +39,10 @@ export class CustomerDetailComponent implements OnInit {
 
   onSubmit(customer: Customer) {
     this.dataService.updateCustomer(customer);
-    if(this.editingMode == true){
-      this.router.navigate(['/customers', 'list'])
-    }
-    else{
-      this.router.navigate(['/customers', 'detail', customer.id])
+    if (this.editingMode === true) {
+      this.router.navigate(['/customers', 'list']);
+    } else {
+      this.router.navigate(['/customers', 'detail', customer.id]);
     }
   }
 }
