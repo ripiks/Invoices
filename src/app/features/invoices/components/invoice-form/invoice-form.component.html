@@ -1,15 +1,15 @@
 <form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
   {{ invoice.invoiceNumber }}
-  <div>
+  <!-- <div>
     <label>
       Invoice Number:
       <input type="text" formControlName="Invoice Number" />
     </label>
-  </div>
+  </div> -->
   <div>
     <label>
       Created at
-      <input type="text" formControlName="Created at" />
+      <input type="text" formControlName="createdAt" />
     </label>
   </div>
   <div>

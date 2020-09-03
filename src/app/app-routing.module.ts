@@ -19,13 +19,13 @@ const routes: Routes = [
       import('./features/customers/customer.module').then((e) => e.CustomerModule),
   },
    {
-     path: 'invoice',
+     path: 'invoices',
      loadChildren: () =>
        import('./features/invoices/invoice.module').then((e) => e.InvoiceModule),
    },
 
 {
-     path: 'product',
+     path: 'products',
      loadChildren: () =>
        import('./features/products/product.module').then((e) => e.ProductModule),
    },
