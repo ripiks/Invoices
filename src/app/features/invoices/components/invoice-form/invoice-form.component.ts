@@ -5,7 +5,9 @@ import {
   FormControl,
   RequiredValidator,
   Validators,
+  FormArray,
 } from '@angular/forms';
+import { Customer } from 'src/app/features/shared';
 
 @Component({
   selector: 'app-invoice-form',
@@ -14,6 +16,7 @@ import {
 })
 export class InvoiceFormComponent implements OnInit {
   @Input() invoice: Invoice;
+  @Input() customers: Customer[];
   @Output() submited: EventEmitter<Invoice> = new EventEmitter();
 
   invoiceForm = new FormGroup({
@@ -28,8 +31,17 @@ export class InvoiceFormComponent implements OnInit {
       Validators.required,
       Validators.pattern('^[0-9]*$'),
     ]),
+
     status: new FormControl('', [Validators.required]),
-    products: new FormControl('', [Validators.required]),
+    products: new FormArray([
+      new FormGroup({
+        name: new FormControl('', [Validators.required]),
+        price: new FormControl('', [
+          Validators.required,
+          Validators.pattern('^[0-9]*$'),
+        ])
+      }),
+    ]),
   });
 
   constructor() {}

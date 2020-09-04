@@ -1,46 +1,51 @@
 <form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
-  {{ invoice.invoiceNumber }}
-  <!-- <div>
+    {{ invoice.invoiceNumber }}
+    <!-- <div>
     <label>
       Invoice Number:
       <input type="text" formControlName="Invoice Number" />
     </label>
   </div> -->
-  <div>
-    <label>
-      Created at
-      <input type="text" formControlName="createdAt" />
-    </label>
-  </div>
-  <div>
-    <label>
-      paydate
-      <input type="text" formControlName="paydate" />
-    </label>
-  </div>
-  <div>
-    <label>
-      customer
-      <input type="text" formControlName="customer" />
-    </label>
-  </div>
-  <div>
-    <label>
-      totalPrice
-      <input type="text" formControlName="totalPrice" />
-    </label>
-  </div>
-  <div>
-    <label>
-      products
-      <input type="text" formControlName="products" />
-    </label>
-  </div>
-  <div>
-    <label>
-      total Price
-      <input type="text" formControlName="totalPrice" />
-    </label>
-  </div>
-  <button [disabled]="this.invoiceForm.invalid">submit</button>
+    <div>
+        <label>
+            Created at
+            <input type="text" formControlName="createdAt" />
+        </label>
+    </div>
+    <div>
+        <label>
+            paydate
+            <input type="text" formControlName="paydate" />
+        </label>
+    </div>
+    <div>
+        <label>
+            customer
+            <select formControlName="customer">
+                <option [value]="null">Vyberte zákaznika</option>
+                <option [value]="-1">Nezmany zakaznil</option>
+                <option *ngFor="let customer of customers" [value]="customer.id">customer.name</option>    
+            </select>
+            <!-- <input type="text" formControlName="customer" /> -->
+        </label>
+    </div>
+    <div>
+        <label>
+            totalPrice
+            <input type="text" formControlName="totalPrice" />
+        </label>
+    </div>
+    <div>
+        <label>
+            products
+            <!-- TODO: dynamicky pridavani radku a vyplneni -->
+        </label>
+    </div>
+    <div>
+        <label>
+            total Price
+            <input type="text" formControlName="totalPrice" />
+        </label>
+    </div>
+    <button [disabled]="this.invoiceForm.invalid">submit</button>
 </form>

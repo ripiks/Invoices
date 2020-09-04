@@ -42,6 +42,7 @@ export class InvoiceDetailComponent implements OnInit {
     }
   }
   onSubmit(invoice: Invoice) {
+    console.log(invoice);
     this.dataService.updateInvoice(invoice);
     if (this.editingMode === true) {
       this.router.navigate(['/invoices', 'list']);

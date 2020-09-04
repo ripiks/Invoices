@@ -14,7 +14,7 @@ export const routes: Routes = [
     component: fromPages.InvoicesComponent,
   },
   {
-    path: 'detail/:id',
+    path: 'detail/:invoiceNumber',
     component: fromPages.InvoiceDetailComponent,
   },
   {
