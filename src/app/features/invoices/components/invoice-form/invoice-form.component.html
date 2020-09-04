@@ -1,11 +1,12 @@
 <form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
     {{ invoice.invoiceNumber }}
     <!-- <div>
-    <label>
-      Invoice Number:
-      <input type="text" formControlName="Invoice Number" />
-    </label>
-  </div> -->
+        <label>
+        Invoice Number:
+        <input type="text" formControlName="Invoice Number" />
+        </label>
+    </div> -->
+
     <div>
         <label>
             Created at
@@ -20,11 +21,9 @@
     </div>
     <div>
         <label>
-            customer
+            Customer
             <select formControlName="customer">
-                <option [value]="null">Vyberte zákaznika</option>
-                <option [value]="-1">Nezmany zakaznil</option>
-                <option *ngFor="let customer of customers" [value]="customer.id">customer.name</option>    
+                <option *ngFor="let customer of customers" [value]="customer.id">{{customer.name}}</option>
             </select>
             <!-- <input type="text" formControlName="customer" /> -->
         </label>
@@ -36,10 +35,28 @@
         </label>
     </div>
     <div>
-        <label>
-            products
-            <!-- TODO: dynamicky pridavani radku a vyplneni -->
-        </label>
+
+        <!-- TODO: dynamicky pridavani radku a vyplneni -->
+
+        <div formArrayName="products">
+            <h3>Products</h3>
+            <a (click)="addAlias()" class="btn">Add Alias</a>
+
+            <div *ngFor="let product of products.controls; let i=index">
+                <div [formGroup]="product">
+                    <label>
+                        name
+                        <input type="text" formControlName="name">
+                    </label>
+                    <label>
+                        price
+                        <input type="text" formControlName="price">
+                    </label>
+                </div>
+                <!-- The repeated alias template -->
+            </div>
+        </div>
+
     </div>
     <div>
         <label>

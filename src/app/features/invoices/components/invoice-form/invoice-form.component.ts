@@ -33,24 +33,39 @@ export class InvoiceFormComponent implements OnInit {
     ]),
 
     status: new FormControl('', [Validators.required]),
-    products: new FormArray([
-      new FormGroup({
-        name: new FormControl('', [Validators.required]),
-        price: new FormControl('', [
-          Validators.required,
-          Validators.pattern('^[0-9]*$'),
-        ])
-      }),
-    ]),
+    products: new FormArray([]),
   });
+
+  getNewFormgroupForProduct() {
+    return new FormGroup({
+      name: new FormControl('', [Validators.required]),
+      price: new FormControl('', [
+        Validators.required,
+        Validators.pattern('^[0-9]*$'),
+      ]),
+    });
+  }
 
   constructor() {}
 
   ngOnInit(): void {
+    if(this.invoice && this.invoice.products){
+      for(let i = 0 ; i < this.invoice.products.length; i++){
+        this.addAlias();
+      }
+    }
     this.invoiceForm.patchValue(this.invoice);
   }
 
   onSubmit() {
     this.submited.emit(this.invoiceForm.value);
+  }
+
+  get products() {
+    return this.invoiceForm.get('products') as FormArray;
+  }
+
+  addAlias() {
+    this.products.push(this.getNewFormgroupForProduct());
   }
 }

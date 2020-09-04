@@ -25,7 +25,7 @@ export class DataService {
       {
         invoiceNumber: 111,
         createdAt: moment(),
-        customer: this.customers[0],
+        customerId: this.customers[0].id,
         totalPrice: 1000,
         status: 'odeslano',
         paydate: moment().add(14, 'days'),
@@ -34,7 +34,7 @@ export class DataService {
       {
         invoiceNumber: 112,
         createdAt: moment(),
-        customer: this.customers[0],
+        customerId: this.customers[0].id,
         totalPrice: 1000,
         status: 'odeslano',
         paydate: moment().add(14, 'days'),

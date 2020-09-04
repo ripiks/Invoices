@@ -10,6 +10,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class InvoiceDetailComponent implements OnInit {
   invoice: Invoice;
+  customers: Customer[];
+
   editingMode: boolean = false;
 
   constructor(
@@ -19,6 +21,8 @@ export class InvoiceDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.customers = this.dataService.getCustomers();
+
     let invoiceNumberForEdit = this.route.snapshot.paramMap.get(
       'invoiceNumber'
     );
@@ -32,7 +36,7 @@ export class InvoiceDetailComponent implements OnInit {
       this.invoice = {
         invoiceNumber: this.dataService.getNextInvoiceNumber(),
         createdAt: null,
-        customer: null,
+        customerId: null,
         totalPrice: null,
         status: null,
         paydate: null,

@@ -1,9 +1,9 @@
 <div>
   {{ invoice.invoiceNumber }}
-  <app-customer-row [customer]="invoice.customer"></app-customer-row>
+  <!-- <app-customer-row [customer]="invoice.customerId"></app-customer-row> -->
 
   {{ invoice.invoiceNumber }}
-  {{ invoice.customer }}
+  {{ invoice.customerId }}
   {{ invoice.products }}
   {{ invoice.createdAt | date }}
   {{ invoice.paydate | date }}
